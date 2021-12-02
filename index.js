@@ -21,7 +21,7 @@ const options = (ctx, btnText, btnUrl) => {
 
 bot.start((ctx) => {
     if(ctx.message.chat.type == 'private'){
-        ctx.replyWithMarkdown("Hey ${ctx.message.from.first_name}, Welcome ! \nSend me a long URL and get it shortened. \n\nUse /help to To know how to use. \n\nකරුණාකර, මෙම බොට්ගේ updates පිළිබඳව දැනගන්න අපගේ ප්‍රධාන චැනලයට එක් වෙන්න.@CloudUpdateslk.",
+        ctx.replyWithMarkdown('Hey ${ctx.message.from.first_name}, Welcome ! \nSend me a long URL and get it shortened. \n\nUse /help to To know how to use. \n\nකරුණාකර, මෙම බොට්ගේ updates පිළිබඳව දැනගන්න අපගේ ප්‍රධාන චැනලයට එක් වෙන්න.@CloudUpdateslk.',
         {
             reply_to_message_id: ctx.update.message.message_id,
             allow_sending_without_reply: true,
