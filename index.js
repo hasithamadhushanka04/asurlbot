@@ -21,7 +21,7 @@ const options = (ctx, btnText, btnUrl) => {
 
 bot.start((ctx) => {
     if(ctx.message.chat.type == 'private'){
-        ctx.replyWithMarkdown(`Hey ${ctx.message.from.first_name}, Welcome ! \nUse /help to get started.\nUse Send me a long URL and get it shortened. \n\n Powered by [@CloudUpdateslk](https://t.me/CloudUpdateslk).` ,
+        ctx.replyWithMarkdown(`Hey ${ctx.message.from.first_name}, Welcome ! \nUse /help to get started.\nSend me a long URL and get it shortened. \n\n Powered by [@CloudUpdateslk](https://t.me/CloudUpdateslk).` ,
         {
             reply_to_message_id: ctx.update.message.message_id,
             allow_sending_without_reply: true,
@@ -35,7 +35,7 @@ bot.start((ctx) => {
 });
 bot.help((ctx) => {
     if(ctx.message.chat.type == 'private'){
-        ctx.replyWithMarkdown("📌 To short a big URL just send me the long URL and I'll give shorten link.\n\n/start - Restart the bot. \n/help - Get this message. \n/short - Short Long Urls (Eg `/short https://t.me/CloudUpdateslk`)\n/unshort - Extract long URL from any shortend URL. (Eg. `/unshort https://cutt.ly/rYeMbCI`)." , 
+        ctx.replyWithMarkdown("📌 To short a big URL just send me the long URL and I'll give shorten link.\n\n/start - Restart the bot. \n/help - Get this message. \n/short - Short Long Urls \n(Eg `/short https://t.me/CloudUpdateslk`) \n\n/unshort - Extract long URL from any shortend URL.\n(Eg `/short https://cutt.ly/uYtZYws`)" , 
         {
             reply_to_message_id: ctx.update.message.message_id,
             allow_sending_without_reply: true,
