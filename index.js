@@ -3,8 +3,8 @@ const { Telegraf } = require('telegraf');
 const short = require('./modules/short');
 const unshort = require('./modules/unshort');
 const default_btn = [
-    { text: "Join Channel", url: "https://t.me/asprojects" },
-    { text: "Support Group", url: "https://t.me/assupportchat" },
+    { text: "Join Channel", url: "https://t.me/CloudUpdateslk" },
+    { text: "Support", url: "https://t.me/CloudAssistBot" },
   ];
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
@@ -21,7 +21,7 @@ const options = (ctx, btnText, btnUrl) => {
 
 bot.start((ctx) => {
     if(ctx.message.chat.type == 'private'){
-        ctx.replyWithMarkdown(`Hey ${ctx.message.from.first_name}, Welcome ! \nUse /help to get started. Send me a long URL and get it shortened. \n\nMade with ❤ by [𝔄𝔉𝔉𝔄𝔑](https://t.me/AffanTheBest).` ,
+        ctx.replyWithMarkdown(`Hey ${ctx.message.from.first_name}, Welcome ! \nUse /help to get started.\nUse Send me a long URL and get it shortened. \n\n Powered by [@CloudUpdateslk](https://t.me/CloudUpdateslk).` ,
         {
             reply_to_message_id: ctx.update.message.message_id,
             allow_sending_without_reply: true,
@@ -35,7 +35,7 @@ bot.start((ctx) => {
 });
 bot.help((ctx) => {
     if(ctx.message.chat.type == 'private'){
-        ctx.replyWithMarkdown("To short a big URL just send me the long URL and I'll give shorten link.\n\n/start - Restart the bot. \n/help - Get this message. \n/short - Short Long Urls (Eg `/short https://github.com/AffanTheBest`)\n/unshort - Extract long URL from any shortend URL. (Eg. `/unshort https://cutt.ly/qzXU9A2`). \nType `@AsUrlBot` in chat input to use inline. (Eg. `@AsUrlBot Macbook`)\n\n/donate - Donate to developer." , 
+        ctx.replyWithMarkdown("📌 To short a big URL just send me the long URL and I'll give shorten link.\n\n/start - Restart the bot. \n/help - Get this message. \n/short - Short Long Urls (Eg `/short https://t.me/CloudUpdateslk`)\n/unshort - Extract long URL from any shortend URL. (Eg. `/unshort https://cutt.ly/rYeMbCI`). \n\n/donate - Donate to developer.🧑‍💻" , 
         {
             reply_to_message_id: ctx.update.message.message_id,
             allow_sending_without_reply: true,
@@ -50,10 +50,9 @@ bot.help((ctx) => {
 
 bot.command('donate', async(ctx) => {
     const donate_btns = [
-        {text: 'Ko-fi', url: 'https://ko-fi.com/affanthebest'},
-        {text: 'Paypal', url: 'https://paypal.me/affanthebest'}
+        {text: '📞 Contact', url: 'https://t.me/CloudAssistBot'}
     ]
-    ctx.replyWithMarkdown('Thanks for showing intrest in donating. Remember every donation matters!\n\nYou can donate me by using following links:\nPaypal: https://paypal.me/affanthebest\nKo-fi - https://ko-fi.com/affanthebest \n\nUPI - `siddiquiaffan201@okaxis`\n\nFor any other methods contact @AffanTheBest personally.',
+    ctx.replyWithMarkdown('Thanks for showing intrest in donating.Use Contact Button to donate me personally.',
     {  
         reply_to_message_id: ctx.update.message.message_id,
         allow_sending_without_reply: true,
@@ -72,7 +71,7 @@ bot.command('unshort' ,async (ctx) => {
             `Here's the extracted link : \n👉 ${longUrl} .`, options(ctx, 'Extracted URL', longUrl)
         )
     }else{
-        ctx.replyWithMarkdown('Please send a valid URL !')
+        ctx.replyWithMarkdown('Please send a valid URL ! ')
     }
 })
 
